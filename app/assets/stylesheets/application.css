@@ -115,7 +115,7 @@ ul {
 }
 
 .detail img {
-  float: left;
+  /*float: left;*/
   max-width: 300px;
   max-height: 200px;
 }
