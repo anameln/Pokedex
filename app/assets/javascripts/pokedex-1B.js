@@ -1,4 +1,5 @@
 Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
+  // debugger
   var $div = $("<div>");
   $div.addClass("detail");
   var $ul = $("<ul>");
@@ -6,7 +7,8 @@ Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
   $image.attr("src", pokemon.get("image_url"));
   $div.append($image);
     pokemon.pairs().forEach( function(pair){
-      if(pair[0] !== "image_url"){
+      // debugger
+      if(pair[0] !== "image_url" && pair[0] !== "pokemon"){
         var $li = $("<li>");
         $li.text(pair[0] +": " + pair[1])
         $ul.append($li)
@@ -19,7 +21,6 @@ Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
 
 
 Pokedex.RootView.prototype.selectPokemonFromList = function (event) {
-  // debugger
   var $li = $(event.currentTarget)
   var id = $li.attr("data-id")
   var poke = this.pokes.get(id)
